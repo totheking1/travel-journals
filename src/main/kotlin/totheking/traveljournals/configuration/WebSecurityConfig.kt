@@ -6,6 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.invoke
 import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.security.crypto.factory.PasswordEncoderFactories
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 import totheking.traveljournals.auth.CustomUserDetailsService
 import totheking.traveljournals.user.application.UserCommandHandler
@@ -22,7 +24,7 @@ class WebSecurityConfig {
             formLogin { }
             httpBasic { }
             authorizeHttpRequests {
-                authorize(anyRequest, authenticated)
+                authorize(anyRequest, permitAll)
             }
         }
         return http.build()
@@ -30,4 +32,7 @@ class WebSecurityConfig {
 
     @Bean
     fun userDetailsService(userCommandHandler: UserCommandHandler): UserDetailsService = CustomUserDetailsService(userCommandHandler)
+
+    @Bean
+    fun passwordEncoder(): PasswordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder()
 }
