@@ -22,7 +22,7 @@ class WebSecurityConfig {
             formLogin { }
             httpBasic { }
             authorizeHttpRequests {
-                authorize(anyRequest, authenticated)
+                authorize(anyRequest, permitAll)
             }
         }
         return http.build()
