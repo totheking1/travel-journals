@@ -29,5 +29,4 @@ class TravelService(val travelRepository: TravelRepository) {
     private fun getTravelResponse(travel: Travel): CreateResponse {
         return CreateResponse(travel.id)
     }
-
 }

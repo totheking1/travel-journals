@@ -23,8 +23,9 @@ class TravelController(val travelService: TravelService) {
     }
 
     @PostMapping
-    fun createTravel(@RequestBody createRequest: CreateRequest): ResponseEntity<CreateResponse>{
+    fun createTravel(@RequestBody createRequest: CreateRequest): ResponseEntity<CreateResponse> {
         val travel: CreateResponse = travelService.createTravel(createRequest)
         return ResponseEntity.created(URI.create("/travel/" + travel.id)).body(travel)
     }
+
 }
