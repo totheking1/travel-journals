@@ -1,6 +1,6 @@
 package totheking.traveljournals.travel.application
+
 import org.springframework.stereotype.Service
-import totheking.traveljournals.travel.domain.Travel
 import totheking.traveljournals.travel.domain.TravelRepository
 import totheking.traveljournals.travel.dto.TravelDto
 
