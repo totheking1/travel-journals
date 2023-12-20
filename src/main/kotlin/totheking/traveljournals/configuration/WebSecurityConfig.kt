@@ -21,6 +21,11 @@ class WebSecurityConfig {
             csrf {
                 disable()
             }
+            headers {
+                frameOptions {
+                    disable()
+                }
+            }
             formLogin { }
             httpBasic { }
             authorizeHttpRequests {
