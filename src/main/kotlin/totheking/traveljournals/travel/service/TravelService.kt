@@ -1,12 +1,12 @@
-package totheking.traveljournals.travel.application
+package totheking.traveljournals.travel.service
 
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import totheking.traveljournals.travel.domain.Travel
-import totheking.traveljournals.travel.domain.repository.TravelRepository
+import totheking.traveljournals.travel.domain.TravelRepository
 import totheking.traveljournals.travel.dto.TravelDto
-import totheking.traveljournals.travel.dtos.CreateRequest
-import totheking.traveljournals.travel.dtos.CreateResponse
+import totheking.traveljournals.travel.dto.CreateRequest
+import totheking.traveljournals.travel.dto.CreateResponse
 
 
 @Service
@@ -21,7 +21,7 @@ class TravelService(val travelRepository: TravelRepository) {
     fun delete(id: Long) = travelRepository.deleteById(id)
 
     @Transactional
-    fun createTravel(createRequest: CreateRequest): CreateResponse{
+    fun createTravel(createRequest: CreateRequest): CreateResponse {
         val travel: Travel = travelRepository.save(createRequest.toEntity())
         return getTravelResponse(travel)
     }

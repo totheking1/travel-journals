@@ -2,10 +2,10 @@ package totheking.traveljournals.travel.controller
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import totheking.traveljournals.travel.application.TravelService
+import totheking.traveljournals.travel.service.TravelService
 import totheking.traveljournals.travel.dto.TravelDto
-import totheking.traveljournals.travel.dtos.CreateRequest
-import totheking.traveljournals.travel.dtos.CreateResponse
+import totheking.traveljournals.travel.dto.CreateRequest
+import totheking.traveljournals.travel.dto.CreateResponse
 import java.net.URI
 
 
