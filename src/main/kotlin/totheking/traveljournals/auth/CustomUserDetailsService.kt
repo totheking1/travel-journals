@@ -2,7 +2,7 @@ package totheking.traveljournals.auth
 
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
-import totheking.traveljournals.user.application.UserCommandHandler
+import totheking.traveljournals.user.service.UserCommandHandler
 
 class CustomUserDetailsService(private val userCommandHandler: UserCommandHandler) : UserDetailsService {
     override fun loadUserByUsername(username: String?): UserDetails {

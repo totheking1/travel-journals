@@ -1,4 +1,4 @@
-package totheking.traveljournals.travel.dtos
+package totheking.traveljournals.travel.dto
 
 
 data class CreateResponse(
